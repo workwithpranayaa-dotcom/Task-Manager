@@ -1,0 +1,29 @@
+:root{
+  --bg:#F6F3EC; --surface:#FFFFFF; --ink:#181A1E; --muted:#6E6A5E;
+  --line:#E1DACB; --accent:#A8672A; --accent-ink:#FFFFFF;
+  --radius:8px; --font:"Segoe UI", system-ui, -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root{ --bg:#0B0E14; --surface:#12161F; --ink:#ECEEF2; --muted:#8890A0; --line:#232838; --accent:#C98A4B; --accent-ink:#0B0E14; }
+}
+*{box-sizing:border-box;}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--font);display:flex;justify-content:center;padding:48px 20px;min-height:100vh;}
+.app{width:100%;max-width:480px;}
+header h1{margin:0;font-size:1.8rem;}
+header .sub{margin:6px 0 28px;color:var(--muted);font-size:.95rem;}
+.add-row{display:flex;gap:10px;margin-bottom:18px;}
+.add-row input{flex:1;padding:12px 14px;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface);color:var(--ink);font-size:1rem;}
+.add-row button{padding:12px 18px;border:none;border-radius:var(--radius);background:var(--accent);color:var(--accent-ink);font-weight:600;cursor:pointer;}
+.filters{display:flex;gap:8px;margin-bottom:18px;}
+.filter{padding:8px 14px;border:1px solid var(--line);background:transparent;color:var(--muted);border-radius:999px;cursor:pointer;font-size:.88rem;}
+.filter.active{background:var(--accent);color:var(--accent-ink);border-color:var(--accent);}
+.task-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;}
+.task{display:flex;align-items:center;gap:12px;padding:12px 14px;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);}
+.task input[type="checkbox"]{width:18px;height:18px;accent-color:var(--accent);flex:none;}
+.task span{flex:1;word-break:break-word;}
+.task.done span{text-decoration:line-through;color:var(--muted);}
+.task button{background:none;border:none;color:var(--muted);cursor:pointer;font-size:1rem;padding:4px;}
+.task button:hover{color:#c0392b;}
+.empty{color:var(--muted);text-align:center;padding:30px 0;}
+footer{display:flex;justify-content:space-between;align-items:center;margin-top:22px;color:var(--muted);font-size:.85rem;}
+footer button{background:none;border:none;color:var(--muted);cursor:pointer;text-decoration:underline;font-size:.85rem;}
